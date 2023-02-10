@@ -1,4 +1,4 @@
-# OpenAI API Quickstart - Node.js example app
+# Ernie the emojibot - OpenAI API - Node.js 
 
 This is an example generator app using the OpenAI API to respond with appropriate emojis to any given user prompt text. It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). 
 
