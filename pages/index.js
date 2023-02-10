@@ -6,6 +6,11 @@ export default function Home() {
   const [userInput, setUserInput] = useState("");
   const [result, setResult] = useState();
 
+  const resetForm = () => {
+    setUserInput("");
+    setResult("");
+  }
+
   async function onSubmit(event) {
     event.preventDefault();
     try {
@@ -23,7 +28,6 @@ export default function Home() {
       }
 
       setResult(data.result);
-      setUserInput("");
     } catch(error) {
       console.error(error);
       alert(error.message);
@@ -53,10 +57,18 @@ export default function Home() {
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
             />
-            <input type="submit" value="Ask Ernie" />
+            <div className={styles.btns}>
+              <input type="submit" value="Ask Ernie" />
+              <input type="button" value="Clear 🧼" onClick={resetForm}/>
+            </div>
           </form>
           <div className={styles.result}>
-            <h2>{result}</h2>
+            {result &&
+              <>
+                <p><span style={{ fontSize: '20px' }}>"</span>{userInput}<span style={{ fontSize: '20px' }}>"</span></p>
+                <h2>{result}</h2>
+              </>
+            }
           </div>
         
       </main>
