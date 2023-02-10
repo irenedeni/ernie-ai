@@ -25,33 +25,37 @@ export default function Home() {
       setResult(data.result);
       setUserInput("");
     } catch(error) {
-      // Consider implementing your own error handling logic here
       console.error(error);
       alert(error.message);
     }
   }
 
   return (
-    <div>
+    <div id="container" className={styles.container}>
       <Head>
-        <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <title>OpenAI - Ernie the emoji chatbot</title>
+        <link rel="icon" href="/ernie.png" />
       </Head>
 
       <main className={styles.main}>
-        {/* <img src="/dog.png" className={styles.icon} /> */}
-        <h3>Ernie is a chatbot that answers questions with emojis instead of text.</h3>
+      <i><span style={{ color: '#45ffca' }}>#</span>BecauseBotsHaveEmoti(c)onsToo</i>
+        <h1 className={styles.ernie}>ERNIE<sup>😎</sup><sub>🤓</sub></h1> 
+        <h3>
+          the chatbot that answers in emojish.
+        </h3>
         <form onSubmit={onSubmit}>
-          <input
-            type="text"
+          <textarea
             name="userPrompt"
-            placeholder="Paste any text"
+            className={styles.textarea}
+            placeholder="Paste any very important question"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <input type="submit" value="Generate emojis" />
+          <input type="submit" value="Ask Ernie" />
         </form>
-        <div className={styles.result}>{result}</div>
+        <div className={styles.result}>
+          <h2>{result}</h2>
+        </div>
       </main>
     </div>
   );
