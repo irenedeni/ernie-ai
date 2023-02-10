@@ -38,24 +38,27 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-      <i><span style={{ color: '#45ffca' }}>#</span>BecauseBotsHaveEmoti(c)onsToo</i>
-        <h1 className={styles.ernie}>ERNIE<sup>😎</sup><sub>🤓</sub></h1> 
-        <h3>
-          the chatbot that answers in emojish.
-        </h3>
-        <form onSubmit={onSubmit}>
-          <textarea
-            name="userPrompt"
-            className={styles.textarea}
-            placeholder="Paste any very important question"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-          />
-          <input type="submit" value="Ask Ernie" />
-        </form>
-        <div className={styles.result}>
-          <h2>{result}</h2>
-        </div>
+          <i><span style={{ color: '#45ffca' }}>#</span>BecauseBotsHaveEmoti(c)onsToo</i>
+          <div className={styles.text}>
+            <h1 className={styles.ernie}>ERNIE<sup>😎</sup><sub>🤓</sub></h1> 
+            <h3>
+              The chatbot that answers in emojish.
+            </h3>
+          </div>
+          <form onSubmit={onSubmit}>
+            <textarea
+              name="userPrompt"
+              className={styles.textarea}
+              placeholder="Ask any important question or statement"
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+            />
+            <input type="submit" value="Ask Ernie" />
+          </form>
+          <div className={styles.result}>
+            <h2>{result}</h2>
+          </div>
+        
       </main>
     </div>
   );
