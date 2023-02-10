@@ -13,7 +13,6 @@
   font-weight: bold;
   font-style: normal;
 }
-
 .container {
   background-color: #000;
   height: 100vh;
@@ -22,13 +21,11 @@
   align-items: center;
   padding: 2rem;
 }
-
 @media only screen and (max-width: 450px) {
   .container {
     align-items: flex-start;
   }
 }
-
 .main,
 .main input {
   font-size: 16px;
@@ -58,7 +55,6 @@
   font-weight: normal;
   margin-top: 0px;
 }
-
 @media only screen and (max-width: 450px) {
   .main h3 {
     font-size: 19px;
@@ -72,7 +68,6 @@
   width: 320px;
   margin: 2rem auto;
 }
-
 @media only screen and (max-width: 450px) {
   .main form {
     display: flex;
@@ -121,6 +116,9 @@
   text-align: center;
   cursor: pointer;
 }
+.main input[type="submit"]:hover {
+  background-color: #3da789;
+}
 .main .result {
   margin-top: 20px;
   font-size: 1.7rem;
@@ -132,12 +130,3 @@
   text-align: center;
 }
 
-/* // How many people work in google
-How many people live in Amsterdam?
-// What is the meaning of life?
-// What's the weather in Amsterdam today?
-// How does a king look like?
-// what are all possible heart colors emojis?
-// how many fingers does a chimpanzee have
-// Emojis that have to do with Italy or Italian food
-*/
