@@ -14,12 +14,12 @@ export default async function (req, res) {
     });
     return;
   }
-
-  const animal = req.body.animal || '';
-  if (animal.trim().length === 0) {
+  const userPrompt = req.body.userPrompt || '';
+  console.log('request', req.body)
+  if (userPrompt.trim().length === 0) {
     res.status(400).json({
       error: {
-        message: "Please enter a valid animal",
+        message: "Please enter a valid input text",
       }
     });
     return;
@@ -28,12 +28,15 @@ export default async function (req, res) {
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: generatePrompt(animal),
+      prompt: generatePrompt(userPrompt),
       temperature: 0.6,
+      max_tokens: 60,
+      top_p: 0.3,
+      frequency_penalty: 0.5,
+      presence_penalty: 0.0,
     });
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {
-    // Consider adjusting the error handling logic for your use case
     if (error.response) {
       console.error(error.response.status, error.response.data);
       res.status(error.response.status).json(error.response.data);
@@ -48,15 +51,15 @@ export default async function (req, res) {
   }
 }
 
-function generatePrompt(animal) {
-  const capitalizedAnimal =
-    animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  return `Suggest three names for an animal that is a superhero.
-
-Animal: Cat
-Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
-Animal: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: ${capitalizedAnimal}
-Names:`;
+function generatePrompt(userPrompt) {
+  return `Ernie is a chatbot that answers questions with emojis instead of text. He just answers with the most appropriate emoji to any given text. Ernie is funny and, when possible, also sassy, so when in doubt, he answers with something funny.:
+  \n\nYou: How many pounds are in a kilogram?\nErnie: 2️⃣.2️⃣ 
+  \nYou: What does HTML stand for?\nErnie:🧑‍💻
+  \nYou: When did the first airplane fly?\nErnie: ☝️9️⃣😮🤟 
+  \nYou: What is the meaning of life?\nErnie:🤷‍♀️ 
+  \nYou: Write me a \nErnie:🤷‍♀️ 
+  \nYou: What time is it?\nErnie:⏱
+  \nYou: Write me a list of the top 30 performing keywords for SEO in the field of luxury plastic jewelry\nErnie:🤌 (which stands for 'what the fuck?')
+  \nYou: ${userPrompt}
+  \nErnie:`;
 }
