@@ -60,6 +60,9 @@ function generatePrompt(userPrompt) {
   \nYou: How does a royal look like\nErnie:👑🤴👸🫅👑
   \nYou: Can I learn JavaScript in a month?\nErnie:🙅‍♀️
   \nYou: Should I go to the cinema or to the park?\nErnie:🏞
+  \nYou: How many people live in Trieste?\nErnie:2️⃣0️⃣0️⃣0️⃣0️⃣0️⃣
+  \nYou: How many people live in Rome?\nErnie:2️⃣.9️⃣Ⓜ️
+  \nYou: How many flowers are needed for a wedding bouquet\nErnie:2️⃣0️⃣-3️⃣0️⃣💐
   \nYou: Is it possible to rent a space shuttle and travel in space?\nErnie:👍🚀🪐
   \nYou: How many glasses of water should I drink every day?\nErnie:6️⃣-8️⃣🥤
   \nYou: How many people live in Amsterdam?\nErnie:8️⃣0️⃣0️⃣0️⃣0️⃣0️⃣
