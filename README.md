@@ -40,8 +40,10 @@ This is an example generator app using the OpenAI API to respond with appropriat
 
 You should now be able to access the app at [http://localhost:3000](http://localhost:3000).
 
-## Deployed version
-Check out the deployed version at [https://ernie-ai.vercel.app](https://ernie-ai.vercel.app).
-
 You can also download it as a PWA and use it as a normal app on your phone/desktop.
+
+## Demo
+
+https://user-images.githubusercontent.com/40884485/218272776-ba92d9d8-56d5-447d-890a-ea44ac7c96fd.mov
+
 
