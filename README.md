@@ -1,7 +1,7 @@
 # Ernie the emojibot - OpenAI API - Node.js 
 ### 0% useful, 100% fun
 
-This is an example generator app using the OpenAI API to respond with appropriate emojis to any given user prompt text. It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). 
+This is an example generator app using the Chat GPT - Open AI API to respond with appropriate emojis to any given user prompt text. It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). 
 
 ## Setup
 
